@@ -1,4 +1,4 @@
-function mergeGridRows(gridId, colTitle) {
+export function mergeGridRows(gridId, colTitle) {
 
     $('#' + gridId + '>.k-grid-content>table').each(function (index, item) {
 
@@ -34,4 +34,8 @@ function mergeGridRows(gridId, colTitle) {
         });
 
     });
+}
+
+export function test(){
+  alert("test");
 }

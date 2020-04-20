@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { products } from './products';
+import { test } from './assests//func'; 
+import { mergeGridRows } from './assests//func'; 
 
-declare function mergeGridRows(v1, v2):any;
 
 @Component({
     selector: 'my-app',
     template: `
-        <kendo-grid [data]="gridData" [height]="410">
+        <kendo-grid [data]="gridData" [height]="410" id="test">
             <kendo-grid-column field="ProductID" title="ID" width="40">
             </kendo-grid-column>
             <kendo-grid-column field="ProductName" title="Name" width="250">
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit{
     public gridData: any[] = products;
 
     ngOnInit(){
-      mergeGridRows(this.gridData, "UnitPrice")
+      mergeGridRows("test", "UnitPrice")
+      // test();
     }
 }
