@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { products } from './products';
+
+declare function mergeGridRows(v1, v2):any;
 
 @Component({
     selector: 'my-app',
@@ -24,6 +26,10 @@ import { products } from './products';
         </kendo-grid>
     `
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
     public gridData: any[] = products;
+
+    ngOnInit(){
+      mergeGridRows(this.gridData, "UnitPrice")
+    }
 }
